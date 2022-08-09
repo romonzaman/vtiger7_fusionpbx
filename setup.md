@@ -8,7 +8,7 @@ apt update -y && apt install -y php php-cli php-mysql php-common  php-zip php-mb
 
 nano /etc/php/*/apache2/php.ini
 ```
-date.timezone = Africa/Nairobi
+date.timezone = UTC
 memory_limit = 256M
 upload_max_filesize = 64M
 display_errors = Off
