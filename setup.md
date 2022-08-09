@@ -61,7 +61,7 @@ chown -R www-data:www-data /srv/vtigercrm
 nano /etc/apache2/sites-enabled/vtigercrm.conf
 ```
 <VirtualHost *:80>
-     ServerAdmin admin@dt-bd.com
+     ServerAdmin admin@domain.com
      ServerName domain.com
      ServerAlias www.domain.com
      DocumentRoot /srv/vtigercrm/
