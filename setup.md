@@ -62,8 +62,8 @@ nano /etc/apache2/sites-enabled/vtigercrm.conf
 ```
 <VirtualHost *:80>
      ServerAdmin admin@dt-bd.com
-     ServerName vtiger7.dt-bd.com
-     ServerAlias www.vtiger7.dt-bd.com
+     ServerName domain.com
+     ServerAlias www.domain.com
      DocumentRoot /srv/vtigercrm/
 
      <Directory /srv/vtigercrm/>
