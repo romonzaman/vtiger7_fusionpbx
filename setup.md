@@ -19,7 +19,7 @@ log_errors = Off
 
 mysql -u root -p
 ```
-CREATE USER 'vtiger'@'localhost' IDENTIFIED BY 'Configme!1234@';
+CREATE USER 'vtiger'@'localhost' IDENTIFIED BY 'USE_SECURED_PASS_HERE';
 CREATE DATABASE vtiger;
 GRANT ALL PRIVILEGES ON vtiger.* TO 'vtiger'@'localhost';
 FLUSH PRIVILEGES;
