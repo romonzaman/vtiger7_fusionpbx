@@ -58,6 +58,7 @@ chown -R www-data:www-data /srv/vtigercrm
 
 ```
 
+##### replace domain.com with ip/domain
 nano /etc/apache2/sites-enabled/vtigercrm.conf
 ```
 <VirtualHost *:80>
