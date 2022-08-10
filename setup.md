@@ -19,7 +19,7 @@ log_errors = Off
 
 mysql -u root -p
 ```
-CREATE USER 'vtiger'@'localhost' IDENTIFIED BY 'USE_SECURED_PASS_HERE';
+CREATE USER 'vtiger'@'localhost' IDENTIFIED BY 'configme';
 CREATE DATABASE vtiger;
 GRANT ALL PRIVILEGES ON vtiger.* TO 'vtiger'@'localhost';
 FLUSH PRIVILEGES;
@@ -31,7 +31,7 @@ nano /etc/mysql/mariadb.conf.d/50-server.cnf
 [mysqld]
 sql_mode = ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 ```
-systemctl restart mysql-server
+systemctl restart mariadb.service
 
 mysql -u root -p
 ```
