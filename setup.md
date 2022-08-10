@@ -42,6 +42,7 @@ QUIT
 
 ### download code
 ```
+cd /usr/src/
 wget https://sourceforge.net/projects/vtigercrm/files/vtiger%20CRM%207.4.0/Core%20Product/vtigercrm7.4.0.tar.gz
 tar xvf vtigercrm7.4.0.tar.gz && mv vtigercrm /srv/vtigercrm
 
