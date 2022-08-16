@@ -68,7 +68,7 @@ class Settings_PBXManager_Record_Model extends Settings_Vtiger_Record_Model {
 	}
     
     public function save() {
-		$logFusion =& LoggerManager::getLogger('fusion');
+		// $logFusion =& LoggerManager::getLogger('fusion');
 		$db = PearDatabase::getInstance();
 		$parameters = array();
 		$selectedGateway = $this->get('gateway');
@@ -76,18 +76,18 @@ class Settings_PBXManager_Record_Model extends Settings_Vtiger_Record_Model {
                 
                 foreach ($connector->getSettingsParameters() as $field => $type) {
                         $parameters[$field] = $this->get($field);
-			$logFusion->debug(" SETTINGS PARAMS fieldname=".$field." fieldvalue=".$this->get($field));
+			// $logFusion->debug(" SETTINGS PARAMS fieldname=".$field." fieldvalue=".$this->get($field));
                 }
                 $this->set('parameters', Zend_Json::encode($parameters));
 		$params = array($selectedGateway,$this->get('parameters'));
 		$id = $this->getId();
-		$logFusion->debug(" CALL SETTINGS PARAMS selectedGateway=".$selectedGateway." id=".$id."parameters=".$this->get('parameters'));
+		// $logFusion->debug(" CALL SETTINGS PARAMS selectedGateway=".$selectedGateway." id=".$id."parameters=".$this->get('parameters'));
                 
 		if ($id) {
 			$query = 'UPDATE '.self::tableName.' SET gateway=?, parameters = ? WHERE id = ?';
 			array_push($params, $id);
 		} else {
-			$logFusion->debug(" SETTINGS INSERT tablrName=".self::tableName);
+			// $logFusion->debug(" SETTINGS INSERT tablrName=".self::tableName);
 			$query = 'INSERT INTO '.self::tableName.'(gateway, parameters) VALUES(?, ?)';
 		}
 		$db->pquery($query, $params);
