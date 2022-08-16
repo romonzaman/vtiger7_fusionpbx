@@ -1,0 +1,10 @@
+# ESL
+#
+ESL_HOST = "host.docker.internal"
+# ESL_PORT = "8021"
+ESL_PORT = "8821"
+ESL_SECRET = "ClueCon"
+
+
+VTIGER_URL = ""
+VTIGER_APIKEY = ""
