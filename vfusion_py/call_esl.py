@@ -66,7 +66,7 @@ def on_event(e):
             'timeout' : [3000, 5000],
             'data' : requestBody    
         }
-        x = requests.post(vtiger_url, json = request_options)
+        x = requests.post(vtiger_url, json = requestBody, timeout=5)
         print(x.text)
         logger.info(x.text)
 
@@ -88,7 +88,7 @@ def on_event(e):
             'timeout' : [3000, 5000],
             'data' : requestBody
         }
-        x = requests.post(vtiger_url, json = request_options)
+        x = requests.post(vtiger_url, json = requestBody, timeout=5)
         print(x.text)
         logger.info(x.text)
 
