@@ -66,6 +66,8 @@ def on_event(e):
             'timeout' : [3000, 5000],
             'data' : requestBody    
         }
+        print("sending %s request to %s"% (event_name, vtiger_url))
+        print(requestBody)
         x = requests.post(vtiger_url, json = requestBody, timeout=5)
         print(x.text)
         logger.info(x.text)
@@ -88,6 +90,8 @@ def on_event(e):
             'timeout' : [3000, 5000],
             'data' : requestBody
         }
+        print("sending %s request to %s"% (event_name, vtiger_url))
+        print(requestBody)
         x = requests.post(vtiger_url, json = requestBody, timeout=5)
         print(x.text)
         logger.info(x.text)
