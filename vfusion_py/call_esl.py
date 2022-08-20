@@ -59,13 +59,10 @@ def on_event(e):
         if variable_dialed_user == "":
             requestBody['number'] = caller_destination_number
 
-        request_options = {
-            'method' : 'POST',
-            'contentType' : 'json',
-            'followRedirect' : True,
-            'timeout' : [3000, 5000],
-            'data' : requestBody    
-        }
+        requestBody['src'] = {}
+        requestBody['src']['number'] = get_header(e, "Caller-Caller-ID-Number")
+        requestBody['src']['name'] = get_header(e, "Caller-Caller-ID-Name")
+
         print("sending %s request to %s"% (event_name, vtiger_url))
         print(requestBody)
         x = requests.post(vtiger_url, json = requestBody, timeout=5)
@@ -83,13 +80,10 @@ def on_event(e):
         caller_destination_number = get_header(e, "Other-Leg-Destination-Number")
         requestBody['number'] = caller_destination_number
 
-        request_options = {
-            'method' : 'POST',
-            'contentType' : 'json',
-            'followRedirect' : True,
-            'timeout' : [3000, 5000],
-            'data' : requestBody
-        }
+        requestBody['src'] = {}
+        requestBody['src']['number'] = get_header(e, "Caller-Caller-ID-Number")
+        requestBody['src']['name'] = get_header(e, "Caller-Caller-ID-Name")
+
         print("sending %s request to %s"% (event_name, vtiger_url))
         print(requestBody)
         x = requests.post(vtiger_url, json = requestBody, timeout=5)
